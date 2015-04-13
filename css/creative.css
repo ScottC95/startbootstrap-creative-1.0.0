@@ -516,3 +516,7 @@ textarea {
     resize: none;
 }
 
+.modal-lg {
+    width: 80%;
+}
+
