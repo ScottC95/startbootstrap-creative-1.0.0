@@ -45,6 +45,7 @@ a {
 a:hover,
 a:focus {
     color: #eb3812;
+    text-decoration: none;
 }
 
 h1,
@@ -83,6 +84,7 @@ section {
 aside {
     padding: 50px 0;
 }
+
 
 .no-padding {
     padding: 0;
@@ -344,6 +346,16 @@ header .header-content .header-content-inner p {
     padding-left: 0;
 }
 
+
+.btn-danger {
+    background-color: #d9534f;
+    border-color: d43f3a;
+
+
+}
+
+
+
 .btn-default {
     border-color: #fff;
     color: #222;
@@ -361,7 +373,8 @@ header .header-content .header-content-inner p {
 .open > .dropdown-toggle.btn-default {
     border-color: #ededed;
     color: #222;
-    background-color: #f2f2f2;
+    background-color: #f05f40;
+    color: white;
 }
 
 .btn-default:active,
@@ -498,4 +511,8 @@ footer .icon{
     padding-left: 10px;
     padding-right: 10px;
 }
-  
+
+textarea {
+    resize: none;
+}
+
