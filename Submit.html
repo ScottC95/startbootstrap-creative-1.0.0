@@ -14,6 +14,13 @@
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/set2.css" />
+
+
+
 <!-- Custom Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -43,7 +50,7 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand page-scroll" href="#page-top"><span class ="large_font">Anom</span><span class="small_font">Studios</span></a>
+                <a class="navbar-brand page-scroll" href="index.html"><span class ="large_font">Anom</span><span class="small_font">Studios</span></a>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -53,36 +60,92 @@
     <section class="bg-dark" id="about">
         <div class="container">
             <div class="row text-center">
-                <h2 class="section-heading">Who we are</h2>
+                <h2 class="section-heading">Project Submission</h2>
                 <hr class="light">
                 <!--<div class="col-lg-1">
                 </div>-->
                 <div class="col-lg-6 col-md-6 text-center">
                     <div class="row text-center">
-                        <label for="contact-name" class="col-sm-2 control-label">Name</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="contact-name" placeholder="First & Last Name">
-                        </div>
+                        <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" id="input-1" />
+                    <label class="input__label input__label--nao" for="input-1" style="font size:30;">
+                        <span class="input__label-content input__label-content--nao">Name</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                        </span>
                     </div>
-                    <hr>
+                    
                     <div class="row text-center">
-                        <label for="contact-name" class="col-sm-2 control-label">Name</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="contact-name" placeholder="First & Last Name">
-                        </div>
+                        <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" id="input-2" />
+                    <label class="input__label input__label--nao" for="input-2">
+                        <span class="input__label-content input__label-content--nao">Email</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                    </span>              
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 text-center">
                     <div class="row text-center">
-                        <label for="contact-name" class="col-sm-2 control-label">Name</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="contact-name" placeholder="First & Last Name">
-                        </div>
+                         <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" id="input-3" />
+                    <label class="input__label input__label--nao" for="input-3">
+                        <span class="input__label-content input__label-content--nao">Company</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                    </span>               
                     </div>
                 </div>
+
+                
+                
+               
+           
                 <!--<div class="col-lg-1">
                 </div>-->
             </div>
         </div>
     </section>
+    <script src="js/classie.js"></script>
+        <script>
+            (function() {
+                // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+                if (!String.prototype.trim) {
+                    (function() {
+                        // Make sure we trim BOM and NBSP
+                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                        String.prototype.trim = function() {
+                            return this.replace(rtrim, '');
+                        };
+                    })();
+                }
+
+                [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+                    // in case the input is already filled..
+                    if( inputEl.value.trim() !== '' ) {
+                        classie.add( inputEl.parentNode, 'input--filled' );
+                    }
+
+                    // events:
+                    inputEl.addEventListener( 'focus', onInputFocus );
+                    inputEl.addEventListener( 'blur', onInputBlur );
+                } );
+
+                function onInputFocus( ev ) {
+                    classie.add( ev.target.parentNode, 'input--filled' );
+                }
+
+                function onInputBlur( ev ) {
+                    if( ev.target.value.trim() === '' ) {
+                        classie.remove( ev.target.parentNode, 'input--filled' );
+                    }
+                }
+            })();
+        </script>
 </body>
