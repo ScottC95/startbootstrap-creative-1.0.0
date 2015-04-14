@@ -516,3 +516,12 @@ textarea {
     resize: none;
 }
 
+.modal-lg {
+    width: 80%;
+}
+
+.control-label{
+    padding-top: 7px;
+    padding-bottom: 25px;
+    font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+}
