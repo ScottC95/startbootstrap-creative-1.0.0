@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" >
 
 <head>
 
@@ -55,10 +55,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+                        <a data-toggle="modal" href="#myModal">Login</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">THE PROCESS</a>
+                        <a class="page-scroll" href="#services">The Process</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#sample">Samples</a>
@@ -81,7 +84,7 @@
                 <p>AnomStudios provides bespoke software soloutions & web design based on our open source technologies expertise. 
 				We love quality, innovation and performance, and when it comes to software & web projects, we bring them to life. 
 				Be it a basic company website or a complicated business application - developing it is a passion of ours and so is your satisfaction.</p>
-                <a href="submit.html" class="btn btn-default btn-xl page-scroll">Submit An Idea!</a>
+                <a href="submit.html" class="btn btn-default btn-xl page-scroll">Submit a Project</a>
             </div>
         </div>
     </header>
@@ -137,9 +140,9 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow fadeInDown text-primary" data-wow-delay=".3s"></i>
-                        <h3>Made With Love</h3>
-                        <p class="text-muted">Aftersale.</p>
+                        <i class="fa fa-4x fa-cart-plus wow fadeInDown text-primary" data-wow-delay=".3s"></i>
+                        <h3>After-Sale Packages</h3>
+                        <p class="text-muted">We offer a variety of after-sale packages such as web hosting to marketing support.</p>
                     </div>
                 </div>
             </div>
@@ -244,7 +247,7 @@
         <div class="bg-dark">
             <div class="container text-center">
                 <div class="call-to-action">
-                    <h2>Submit An Idea Today!</h2>
+                    <h2>Submit A Project Today!</h2>
                     <a href="submit.html" class="btn btn-default btn-xl wow tada">Submit!</a>
                 </div>
             </div>
@@ -262,7 +265,7 @@
                 <div class="col-lg-4 col-lg-offset-1 text-center">
                     <a href="tel:02080808080">
                     <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p>02080808080</p> </a>
+                    <p>07803705021</p> </a>
                 </div>
                 <div class="col-lg-2 text-center">
                     <a href="#contactf" data-toggle="modal">
@@ -272,7 +275,7 @@
                 <div class="col-lg-4 text-center">
                     <a href="mailto:your-email@your-domain.com">
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p>AnomStudios@Gmail.com</p></a>
+                    <p>Help@anomstudios.com</p></a>
                 </div>
             </div>
         </div>
@@ -323,7 +326,7 @@
                     </div>
                     <div class="modal-footer">
                         <a class="btn btn-danger" data-dismiss="modal">Close</a>
-                        <button type="submit" class="btn btn-primary" style="padding: 6px 14px;">Send</button>
+                        <button class="btn btn-primary" type="submit" style="padding: 6px 14px;">Send</button>
                     </div>
                 </form>
             </div>
@@ -331,7 +334,111 @@
     </div>
 
 
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">Log in</h4>
+            </div> <!-- /.modal-header -->
 
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="uLogin" placeholder="Login">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        </div>
+                    </div> <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="uPassword" placeholder="Password">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        </div> <!-- /.input-group -->
+                    </div> <!-- /.form-group -->
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                    </div> <!-- /.checkbox -->
+                </form>
+
+            </div> <!-- /.modal-body -->
+
+            <div class="modal-footer">
+                <button class="form-control btn btn-primary">Ok</button>
+
+                <div class="progress">
+                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
+                        <span class="sr-only">progress</span>
+                    </div>
+                </div>
+            </div> <!-- /.modal-footer -->
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+
+
+   
+    <script type="text/javascript">
+        $(document).ready(function(){
+        $('.modal-footer button').click(function(){
+            var button = $(this);
+
+            if ( button.attr("data-dismiss") != "modal" ){
+                var inputs = $('form input');
+                var title = $('.modal-title');
+                var progress = $('.progress');
+                var progressBar = $('.progress-bar');
+
+                inputs.attr("disabled", "disabled");
+
+                button.hide();
+
+                progress.show();
+
+                progressBar.animate({width : "100%"}, 100);
+
+                progress.delay(1000)
+                        .fadeOut(600);
+
+                button.text("Close")
+                        .removeClass("btn-primary")
+                        .addClass("btn-success")
+                        .blur()
+                        .delay(1600)
+                        .fadeIn(function(){
+                            title.text("Log in is successful");
+                            button.attr("data-dismiss", "modal");
+                        });
+            }
+        });
+
+        $('#myModal').on('hidden.bs.modal', function (e) {
+            var inputs = $('form input');
+            var title = $('.modal-title');
+            var progressBar = $('.progress-bar');
+            var button = $('.modal-footer button');
+
+            inputs.removeAttr("disabled");
+
+            title.text("Log in");
+
+            progressBar.css({ "width" : "0%" });
+
+            button.removeClass("btn-success")
+                    .addClass("btn-primary")
+                    .text("Ok")
+                    .removeAttr("data-dismiss");
+                    
+        });
+    });
+    </script>
+
+    <!--<script type="text/javascript" src="js/regi.js"></script>-->
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
